@@ -4,6 +4,12 @@
 
 ### Avvio dell'ambiente Docker
 
+Prima del primo avvio, crea il file `.env` a partire da `.env.example`:
+
+```sh
+cp .env.example .env
+```
+
 Per avviare l'intero stack (PostgreSQL, Backend Django e Frontend Nuxt) eseguire:
 
 ```sh
