@@ -13,7 +13,7 @@ cp .env.example .env
 Per avviare l'intero stack (PostgreSQL, Backend Django e Frontend Nuxt) eseguire:
 
 ```sh
- make up
+make up
 ````
 
 Al termine dell'avvio, dovresti vedere le porte per ogni servizio in console:
@@ -29,5 +29,5 @@ Postgres 👉  localhost:5433
 ### Per arrestare Docker
 
 ```sh
-  make down
+make down
 ```
