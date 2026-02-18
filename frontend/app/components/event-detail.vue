@@ -46,7 +46,8 @@ onMounted(() => {
       leave-from-class="opacity-100"
       leave-to-class="opacity-0"
   >
-    <div v-if="event" @click.self="emit('close')" class="absolute inset-0 z-100 overflow-y-auto grid place-items-center bg-black/50 backdrop-blur-sm">
+    <div v-if="event" @click.self="emit('close')"
+         class="overflow-hidden fixed inset-0 z-100 overflow-y-auto grid place-items-center bg-black/50 backdrop-blur-sm">
       <p @click.self="emit('close')" class="kbd absolute top-5 right-5">esc</p>
       <div class="bg-base-100 card  shadow-md md:min-w-[50vh]">
         <button @click="emit('close')" class="absolute btn btn-ghost btn-circle top-2 right-2">

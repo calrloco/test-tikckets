@@ -34,13 +34,16 @@ const router = useRouter()
 const baseURL = import.meta.server ? config.apiInternalBase : config.public.apiBase
 const search = ref(route.query.q as string ?? '')
 const selected = ref<TicketEvent | null>(null)
+
 const {data} = await useFetch<EventsResponse>('/api/events/', {
   baseURL,
   query: computed(() => ({q: (route.query.q as string || '').trim() || undefined, page: route.query.page || 1})),
 })
+
 const currentPage = computed(() => {
   return Number(route.query.page ?? 1)
 })
+
 // update search param and triggers fetch
 watch(search, (value: string) => {
   const trimmed = value.trim()

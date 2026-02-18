@@ -1,4 +1,4 @@
-# Ticketoo Test
+w# Ticketoo Test
 
 ## Avvio ambiente
 
@@ -30,4 +30,12 @@ Postgres 👉  localhost:5433
 
 ```sh
 make down
+```
+
+### Seeding
+
+Per popolare il database con altri dati di test eseguire con il numero di eventi desiderato:
+
+```sh
+dcx backend uv run python manage.py seed --events 500
 ```

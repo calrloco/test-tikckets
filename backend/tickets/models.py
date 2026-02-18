@@ -1,4 +1,6 @@
 from django.db import models
+from django.contrib.postgres.indexes import GinIndex
+from django.contrib.postgres.search import SearchVector
 
 
 class TicketEvent(models.Model):
@@ -11,8 +13,10 @@ class TicketEvent(models.Model):
     class Meta:
         db_table = "ticket_event"
         indexes = [
-            models.Index(fields=["city"]),
-            models.Index(fields=["title"]),
+            GinIndex(
+                SearchVector("title", "city", config="italian"),
+                name="event_search_gin",
+            )
         ]
 
 

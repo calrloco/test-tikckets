@@ -26,19 +26,47 @@ class Command(BaseCommand):
         total_events = options["events"]
 
         for _ in range(total_events):
-            sector_prefix = chr(random.randint(ord('A'), ord('Z')))
             add_days = random.randint(0, 30)
             start_datetime = timezone.now() + timedelta(days=add_days)
+            city = random.choice([
+                "Roma",
+                "Milano",
+                "Napoli",
+                "Torino",
+                "Bologna",
+                "Firenze",
+                "Venezia",
+                "Verona",
+                "Palermo",
+                "Bari",
+            ])
+            event_type = random.choice([
+                "Concerto",
+                "Festival",
+                "Spettacolo teatrale",
+                "Evento sportivo",
+                "Stand-up comedy",
+            ])
+            venue = random.choice([
+                "Stadio",
+                "Forum",
+                "Teatro",
+                "Arena",
+                "Palazzetto dello sport",
+                "Auditorium"
+            ])
+
             event = TicketEvent.objects.create(
-                title=fake.sentence(),
-                place=fake.address(),
-                city=fake.city(),
+                title=f"{event_type}",
+                place=f"{venue} di {city} - {fake.address()}",
+                city=city,
                 start_datetime=start_datetime,
                 end_datetime=start_datetime + timedelta(minutes=random.randint(30, 120))
             )
             events_created += 1
 
-            for _ in range(random.randint(10, 30)):
+            for _ in range(random.randint(5, 7)):
+                sector_prefix = chr(random.randint(ord('A'), ord('Z')))
                 TicketItem.objects.create(
                     event=event,
                     price=Decimal(random.randint(20, 200)),
