@@ -25,6 +25,6 @@ class EventListAPIView(ListAPIView):
             query = query.filter(search_vector=search_query)
             query = query.annotate(rank=SearchRank("search_vector", search_query))
 
-            return query.filter(rank__gte=0.05).order_by("-rank", "-start_datetime")
+            return query.filter(rank__gte=0.05).order_by("-rank", "start_datetime")
 
-        return query.order_by("-start_datetime")
+        return query.order_by("start_datetime")
