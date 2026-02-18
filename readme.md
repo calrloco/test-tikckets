@@ -28,10 +28,8 @@ make down
 
 ## Seed dati
 
-Per rigenerare manualmente dati di test:
+Per inserire nuovi dati di test:
 
 ```sh
-dcx backend uv run python manage.py seed --events 500
+docker compose exec backend uv run python manage.py seed --events 500
 ```
-
-> Nota: nel container si usa `uv`, quindi i comandi Django vanno eseguiti con `uv run`.
