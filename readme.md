@@ -14,7 +14,7 @@ Avvia lo stack (Postgres, Backend, Frontend):
 make up
 ```
 
-Quando parte l’ambiente viene eseguito automaticamente un seed iniziale di 200 eventi (se il DB è vuoto).
+Quando parte l’ambiente viene eseguito automaticamente un seed iniziale di 1000 eventi (se il DB è vuoto).
 
 Vai su:
 

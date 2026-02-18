@@ -10,13 +10,13 @@ fake = Faker("it_IT")
 
 
 class Command(BaseCommand):
-    help = 'Events and tickets seeder - creates 200 random events with 10-30 tickets each'
+    help = 'Events and tickets seeder'
 
     def add_arguments(self, parser):
         parser.add_argument(
             "--events",
             type=int,
-            default=200
+            default=1000
         )
 
     def handle(self, *args, **options):
@@ -42,7 +42,8 @@ class Command(BaseCommand):
             ])
             event_type = random.choice([
                 "Concerto",
-                "Festival",
+                "Formula 1",
+                "Serie A",
                 "Spettacolo teatrale",
                 "Evento sportivo",
                 "Stand-up comedy",

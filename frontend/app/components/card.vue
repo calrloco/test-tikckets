@@ -10,8 +10,8 @@ const emit = defineEmits<{ (e: 'select', event: TicketEvent): void }>()
   <div class="card w-96 bg-base-100 min-h-60 card-md shadow-sm">
     <div class="card-body">
       <h2 class="card-title">{{ event.title }}</h2>
-      <p>{{ event.start_datetime }}</p>
-      <p>{{ event.city }} / {{ event.place }}</p>
+      <p>{{ event.start_datetime }} - {{ event.city }}</p>
+      <p> {{ event.place }}</p>
       <div class="divider"/>
       <div class="justify-end card-actions">
         <button @click="emit('select', event)" class="btn">Biglietti</button>
