@@ -10,10 +10,12 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@heroicons/vue": "^2.2.0",
     "@tailwindcss/vite": "^4.1.18",
     "daisyui": "^5.5.18",
     "lodash.debounce": "^4.0.8",
     "nuxt": "^4.3.1",
+    "nuxt-icons": "^4.0.0",
     "tailwindcss": "^4.1.18",
     "vue": "^3.5.28",
     "vue-router": "^4.6.4"
