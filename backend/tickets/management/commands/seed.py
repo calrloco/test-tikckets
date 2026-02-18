@@ -10,13 +10,13 @@ fake = Faker("it_IT")
 
 
 class Command(BaseCommand):
-    help = 'Events and tickets seeder - creates 2000 random events with 10-30 tickets each'
+    help = 'Events and tickets seeder - creates 200 random events with 10-30 tickets each'
 
     def add_arguments(self, parser):
         parser.add_argument(
             "--events",
             type=int,
-            default=2000
+            default=200
         )
 
     def handle(self, *args, **options):

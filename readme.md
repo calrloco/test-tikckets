@@ -1,41 +1,37 @@
-w# Ticketoo Test
+# Ticketoo Test
 
 ## Avvio ambiente
 
-### Avvio dell'ambiente Docker
-
-Prima del primo avvio, crea il file `.env` a partire da `.env.example`:
+Prima del primo avvio crea il file `.env`:
 
 ```sh
 cp .env.example .env
 ```
 
-Per avviare l'intero stack (PostgreSQL, Backend Django e Frontend Nuxt) eseguire:
+Avvia lo stack (Postgres, Backend, Frontend):
 
 ```sh
 make up
-````
-
-Al termine dell'avvio, dovresti vedere le porte per ogni servizio in console:
-
-```
-Ticketoo Dev Environment Ready
-
-Nuxt     👉  http://localhost:3000
-Django   👉  http://localhost:8000
-Postgres 👉  localhost:5433
 ```
 
-### Per arrestare Docker
+Quando parte l’ambiente viene eseguito automaticamente un seed iniziale di 200 eventi (se il DB è vuoto).
+
+Vai su:
+
+- Nuxt: http://localhost:3000
+
+Per fermare docker:
 
 ```sh
 make down
 ```
 
-### Seeding
+## Seed dati
 
-Per popolare il database con altri dati di test eseguire con il numero di eventi desiderato:
+Per rigenerare manualmente dati di test:
 
 ```sh
 dcx backend uv run python manage.py seed --events 500
 ```
+
+> Nota: nel container si usa `uv`, quindi i comandi Django vanno eseguiti con `uv run`.
